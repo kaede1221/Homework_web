@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>格子布局？</title>
+    <link rel='stylesheet' id='theme-css' href='https://babylone.fr/wp-content/themes/babylone-theme/assets/dist/css/main.css?ver=15070152' media='all' />
+    <link rel="https://api.w.org/" href="https://babylone.fr/wp-json/" />
+    <link rel="alternate" title="JSON" type="application/json" href="https://babylone.fr/wp-json/wp/v2/pages/7" />
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://babylone.fr/xmlrpc.php?rsd" />
+    <link rel='shortlink' href='https://babylone.fr/?p=7' />
+    <link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://babylone.fr/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbabylone.fr%2Fmetiers%2F" />
+    <link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://babylone.fr/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbabylone.fr%2Fmetiers%2F&#038;format=xml" />
+    <meta name="generator" content="Site Kit by Google 1.142.0" />
+</head>
+
+<style>
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateX(100%);
+        }
+        to {
+            transform: translateX(0);
+        }
+    }
+
+    .fade-in {
+        animation: fadeIn 1s ease forwards; /* 开场动画 */
+    }
+
+    .slide-in {
+        animation: slideIn 0.5s ease forwards; /* 跳转动画 */
+    }
+    @keyframes changeBackground {
+    0% {
+        background-image: linear-gradient(to right, rgba(233, 213, 180, 0.5), rgba(233, 213, 183, 0.5)), url('path_to_noise_image1.png');
+    }
+   50% {
+        background-image: linear-gradient(to right, rgba(233, 213, 180, 0.5), rgba(233, 213, 183, 0.5)), url('path_to_noise_image2.png');
+    }
+
+    100% {
+        background-image: linear-gradient(to right, rgba(233, 213, 180, 0.5), rgba(233, 213, 183, 0.5)), url('path_to_noise_image1.png');
+    }
+}
+
+
+body {
+    display: flex;
+    background: linear-gradient(to right, rgba(233, 213, 180, 0.5), rgba(233, 213, 183, 0.5)), url('path_to_noise_image1.png');
+    background-size: contain;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    animation: changeBackground 0.1s infinite; 
+}
+    .container {
+        width: 90%; /* 修改为90% */
+        margin: 0 auto; /* 居中对齐 */
+    }
+    .nobox {
+        margin-right: -10px; /* 设置右边距为10px */
+        margin-bottom: 10px;
+    }
+
+ .row {
+        margin-bottom: 10px; 
+    }
+
+    /* 最后一项去掉右边距 */
+    .row .nobox:last-child {
+        margin-right: 0; 
+    }
+
+    /* 如果需要上下间距，可以为.row添加margin */
+    .row {
+        margin-bottom: 10px; /* 行与行之间的间距 */
+    }
+
+    .nobox img {
+        width: 100%; 
+        object-fit: cover; 
+        transition: transform 0.3s ease; /* 添加平滑过渡效果 */
+    }
+
+
+.nobox:hover img {
+    transform: scale(1.1); /* 放大到1.1倍 */
+}
+
+
+    .interest-image {
+        max-width: 100%; 
+        height:  100%;
+    }
+
+    .row:first-child .nobox {
+        flex: 3 1 0; 
+    }
+
+    .row:first-child .nobox:nth-child(2) {
+        flex: 3 1 0; 
+    }
+
+    .row:first-child .nobox:last-child {
+        flex: 5 1 0; 
+    }
+
+    .row:last-child .nobox:first-child {
+        flex: 5 1 0; 
+    }
+
+    .row:last-child .nobox:nth-child(2) {
+        flex: 3 1 0; 
+    }
+
+    .row:last-child .nobox:last-child {
+        flex: 3 1 0; 
+    }
+
+    .side {
+        background-color: rgb(165, 182 ,141 ); 
+        width: 15vw; 
+        height: 55vh; 
+        margin: 0;
+        clip-path: polygon(0 0, 100% 0, 100% 2%, 90% 2%, 90% 5%, 100% 5%, 100% 8%, 90% 8%, 90% 11%, 100% 11%, 100% 14%, 90% 14%, 90% 17%, 100% 17%, 100% 20%, 90% 20%, 90% 23%, 100% 23%, 100% 26%, 90% 26%, 90% 29%, 100% 29%, 100% 32%, 90% 32%, 90% 35%, 100% 35%, 100% 38%, 90% 38%, 90% 41%, 100% 41%, 100% 44%, 90% 44%, 90% 47%, 100% 47%);
+    }
+
+ .text-block {
+        width: 40%; /* 设置宽度为40% */
+        margin: 0 auto; /* 居中显示 */
+        padding: 20px; /* 内边距 */
+        text-align: center; /* 文字居中 */
+        color: rgb(247, 237, 222); /* 字体颜色 */
+        margin-right: 0; 
+    }
+    
+    .text-solfa {
+        font-family: 'Solfa Test', sans-serif; 
+        font-weight: 100; /* 字重 */
+        font-size: 150px; /* 字体大小 */
+        white-space: nowrap; /* 不换行 */
+        line-height: 1;
+    }
+    
+    .text-ubuntu {
+        font-family: 'Ubuntu', sans-serif; /* 第二行字体 */
+        font-weight: 100; /* 字重 */
+        font-size: 13px; /* 字体大小 */
+        white-space: nowrap; /* 不换行 */
+    }
+    .text-ubuntu2 {
+        color:rgb(205 ,141 ,122);
+        font-family: 'Ubuntu', sans-serif; /* 第二行字体 */
+        font-weight: 100; /* 字重 */
+        font-size: 13px; /* 字体大小 */
+        white-space: nowrap; /* 不换行 */
+    }
+    .footer__bottom {
+    width: 90%; /* 设置宽度为80% */
+    margin: 0 auto; /* 居中显示 */
+    justify-content: center; /* 垂直居中 */
+     height: 50vh; /* 确保有足够的高度进行居中 */
+     align-items: center; /* 水平居中 */
+}
+.hover-underline {
+               text-decoration: none; /* 默认不带下划线 */
+           }
+ .hover-underline:hover {
+               text-decoration: underline; /* 鼠标悬停时添加下划线 */
+           }
+     .footer__inner {
+
+    margin: 0 auto; /* 居中显示 */
+    height: 60vh; /* 设置高度为60%视口高度 */
+    position: relative; /* 确保定位 */
+    overflow: hidden; /* 确保内容不会溢出 */
+    
+}
+
+.footer__inner2 {
+     display: flex;
+     flex-direction: column; /* 使内容在纵向上排列 */
+     justify-content: center; /* 垂直居中 */
+     height: 50vh; /* 确保有足够的高度进行居中 */
+     align-items: center; /* 水平居中 */
+ }
+
+         .marquee__el__inner2 {
+         color:rgb(205 ,141 ,122);
+             font-family: 'Solfa Test', sans-serif; 
+        font-weight: 100; /* 字重 */
+        font-size: 150px; /* 字体大小 */
+        white-space: nowrap; /* 不换行 */
+        line-height: 1;
+         }
+         @keyframes borderAnimation {
+    0% {
+        border-color: rgba(205, 141, 122, 1) transparent transparent transparent;
+    }
+    25% {
+        border-color: transparent rgba(205, 141, 122, 1) transparent transparent;
+    }
+    50% {
+        border-color: transparent transparent rgba(205, 141, 122, 1) transparent;
+    }
+    75% {
+        border-color: transparent transparent transparent rgba(205, 141, 122, 1);
+    }
+    100% {
+        border-color: rgba(205, 141, 122, 1) transparent transparent transparent;
+    }
+}
+.background-text::before {
+    content: '';
+    position: absolute; /* 绝对定位 */
+    top: 50px; /* 向上偏移25px, 高度减少50px */
+    left: -100px; /* 向左偏移100px，增加左右宽度 */
+    right: -100px; /* 向右偏移100px，增加左右宽度 */
+    bottom: +70px; /* 保持底部对齐 */
+    border: 3px solid transparent; /* 边框颜色透明 */
+    border-radius: 3px; /* 圆角边框 */
+    
+    animation: borderAnimation 4s linear infinite; /* 添加动画效果 */
+}
+         .background-text {
+                font-family: 'Solfa Test', sans-serif; /* 字体为微软雅黑 */
+                font-weight: 500; /* 字重为200 */
+                font-size: 350px; /* 字体大小为200px */
+                background: linear-gradient(to bottom, rgba(205, 141, 122, 1),rgba(205, 141, 122, 0.5), rgba(233,213,183, 0.5),rgba(233,213,183, 0.5)); /* 添加渐变色作为背景 */
+                -webkit-background-clip: text; /* 使背景裁剪为文本形状 */
+                -webkit-text-fill-color: transparent; /* 将文本填充色设为透明，以显示背景的渐变 */
+                top: 50%; /* 垂直居中 */
+
+                
+            }
+            .background-text2 {
+                font-family: 'Ashgabat Demo', sans-serif; /* 字体为微软雅黑 */
+                font-weight: 300; /* 字重为200 */
+                font-size: 120px; /* 字体大小为200px */
+                color: rgb(144, 123, 117); /* 添加渐变色作为背景 */
+                white-space: nowrap; /* 不换行 */
+       
+                top: 50%; /* 垂直居中 */
+            }
+             
+          .opening-animation {
+              position: relative; /* 添加相对定位 */
+              height: 100vh; /* 使父容器占满全屏高度 */
+          }
+      
+          .background-text, .background-text2 {
+              position: absolute; /* 设置为绝对定位 */
+              top: 50%; /* 垂直居中 */
+              left: 50%; /* 水平居中 */
+              transform: translate(-50%, -50%); /* 调整居中的位置 */
+              /* 可添加额外的样式 */
+          } 
+
+      .opening-animation {
+          position: relative; /* 确保子元素的绝对定位相对于此 */
+          height: 100vh; /* 使父容器占满全屏高度 */
+      }
+  
+      .text-ubuntu3 {
+          position: absolute; /* 使用绝对定位 */
+          top: 60%; /* 高度的60% */
+          left: 50%; /* 宽度的50% */
+          transform: translate(-50%, -50%); /* 使其水平垂直居中 */
+          color:rgb(205 ,141 ,122);
+        font-family: 'Ubuntu', sans-serif; /* 第二行字体 */
+        font-weight: 100; /* 字重 */
+        font-size: 15px; /* 字体大小 */
+        white-space: nowrap; /* 不换行 */
+    
+          
+      }
+              
+      .custom-button1 {
+    position: relative; /* 更改为相对定位 */
+    padding: 20px 20px; /* 增加内边距 */
+    font-size: 16px; /* 增大字体 */
+    margin-left: 10px; /* 按钮之间的间距 */
+    border: none; /* 移除边框 */
+    border-radius: 5px; /* 圆角 */
+    cursor: pointer; /* 鼠标悬停时变成手形 */
+    position: absolute; /* 使用绝对定位 */
+    top: 130px; /* 调整到希望的垂直位置 */
+    left: 90%; /* 水平位置居中 */
+    transform: translateX(-50%); /* 使其水平居中 */
+    background-image: url('mhs.png'); /* 添加背景图片 */
+    background-size: cover; /* 背景图片覆盖整个按钮 */
+    background-color: rgba(205, 141, 122, 0); /* 背景色透明 */
+    background-position: center; /* 背景图片居中 */
+}
+
+.custom-button1:hover, 
+.custom-button2:hover, 
+.custom-button3:hover {
+    background-color: #8d6356; /* 悬停时的背景色 */
+}
+       .custom-button2{
+                      position: relative; /* 更改为相对定位 */
+                      padding: 10px 20px; /* 增加内边距 */
+                      font-size: 16px; /* 增大字体 */
+                      margin-left: 10px; /* 按钮之间的间距 */
+                      background-color: rgb(205 ,141 ,122); /* 背景色 */
+                      color: rgb(247,237,222); /* 字体颜色 */
+                      border: none; /* 移除边框 */
+                      border-radius: 5px; /* 圆角 */
+                      cursor: pointer; /* 鼠标悬停时变成手形 */
+                      position: absolute; /* 使用绝对定位 */
+                      top: 130px; /* 调整到希望的垂直位置 */
+                      left: 80%; /* 水平位置居中 */
+                      transform: translateX(0%); /* 使其水平居中 */
+                  }
+                  .custom-button3{
+                      position: relative; /* 更改为相对定位 */
+                      padding: 10px 20px; /* 增加内边距 */
+                      font-size: 16px; /* 增大字体 */
+                      margin-left: 10px; /* 按钮之间的间距 */
+                      background-color: rgb(205 ,141 ,122); /* 背景色 */
+                      color: rgb(247,237,222); /* 字体颜色 */
+                      border: none; /* 移除边框 */
+                      border-radius: 5px; /* 圆角 */
+                      cursor: pointer; /* 鼠标悬停时变成手形 */
+                      position: absolute; /* 使用绝对定位 */
+                      top: 130px; /* 调整到希望的垂直位置 */
+                      left: 90%; /* 水平位置居中 */
+                      transform: translateX(0%); /* 使其水平居中 */
+                  }
+  </style>
+</style>
+
+
+
+
+</head>
+<body>
+    <div class="opening-animation">
+        <div class="background-text">TODAY</div>
+        <div class="background-text2">About me</div>
+        <span class="text-ubuntu3" id="text-ubuntu">click to open</span><br>
+    </div>
+    
+    <div class="footer__content" style="display: none;">
+        <a class="footer__top cell--top cell--bottom marquee marquee--link marquee--footer__top d-block" data-speed="1">
+            <div class="marquee__el"><span class="marquee__el__inner2">TODAY</span></div>
+            <button class="custom-button1" onclick="location.href='https://www.mihuashi.com/dashboard/projects'"></button>
+        </a>
+        <div class="footer__inner cell--top cell--left position-relative overflow-hidden">
+            <div class="marquee marquee--fixed marquee--footer__bottom cell--bottom" data-speed="0.5" data-reverse="true">
+                <div class="marquee__el">
+                    <span class="marquee__el__inner">2024</span> Publicly available information
+                </div>
+            </div>
+            <div class="footer__inner2">
+                <div class="container" style="display: flex; align-items: center;">
+                    <div class="text-block">
+                        <span class="text-ubuntu2">Information currently available for disclosure123</span>
+                        <span class="text-solfa" id="aboutMeText">About Me</span><br>
+                        <span class="text-ubuntu" id="infoText">Information currently available for disclosure</span>
+                    </div>
+                    
+                    <div class="images-container" style="margin-left: 20px;">
+                        <div class="container">
+                            <div class="row">
+                                <a class="nobox">
+                                    <img src="image/01/myday.png" alt="MYDAY" class="interest-image"onmouseover="changeAboutMeText(this)" onmouseout="resetAboutMeText()">
+                                </a>
+                                <a class="nobox">
+                                    <img src="image/01/dowithme.png" alt="DOWITHME" class="interest-image"onmouseover="changeAboutMeText(this)" onmouseout="resetAboutMeText()">
+                                </a>
+                                <a href="page3.html" class="nobox" onmouseover="changeAboutMeText(this)" onmouseout="resetAboutMeText()">
+                                    <img src="image/01/information.png" alt="INFORMATION" class="interest-image">
+                                </a>
+                            </div>
+                            <div class="row">
+                                <a href="page2.html" class="nobox" onmouseover="changeAboutMeText(this)" onmouseout="resetAboutMeText()">
+                                    <img src="image/01/interest.png" alt="INTEREST" class="interest-image">
+                                </a>
+                                <a href="page1.html" class="nobox" onmouseover="changeAboutMeText(this)" onmouseout="resetAboutMeText()">
+                                    <img src="image/01/por.png" alt="PROTFOLIO" class="interest-image">
+                                </a>   
+                                <a class="nobox" href="javascript:void(0);" onclick="showMessage()"onmouseover="changeAboutMeText(this)" onmouseout="resetAboutMeText()">
+                                    <img src="image/01/message.png" alt="MESSAGE" class="interest-image">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <svg class="footer__corner position-absolute" xmlns="http://www.w3.org/2000/svg" width="85" height="85" viewBox="0 0 85 85" xml:space="preserve">
+                <path d="M.5.5h83.3L.5 83.8V.5z"/>
+            </svg>
+        </div>
+    </div>
+    <style>
+        /* 开场动画居中样式 */
+        .opening-animation {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            transition: opacity 0.5s ease;
+        flex-direction: column; /* 垂直排列 */
+        justify-content: center; /* 垂直居中 */
+        align-items: center; /* 水平居中 */
+        height: 100vh; /* 使父容器占满全屏高度 */
+        
+    }
+      
+        
+
+        /* 隐藏的内容 */
+        .footer__content {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            display: none; /* 初始隐藏 */
+        }
+
+        /* 显示内容的样式 */
+        .footer__content.show {
+            display: block; /* 点击后显示 */
+            opacity: 1;
+        }
+    </style>
+
+    <script>
+        // 鼠标悬停时改变文本
+        function changeAboutMeText(element) {
+            const img = element.querySelector('img'); // 获取 <a> 标签内的 <img> 元素
+            const altText = img.alt; // 获取 <img> 的 alt 属性值
+            document.getElementById('aboutMeText').textContent = altText; // 修改文本内容
+        }
+
+        // 鼠标移出时恢复文本
+        function resetAboutMeText() {
+            document.getElementById('aboutMeText').textContent = 'About Me'; // 恢复为默认文本
+        }
+           function changeText(text) {
+                        document.getElementById('aboutMeText').innerText = text;
+                    }
+          document.addEventListener('DOMContentLoaded', function() {
+                    // 页面加载后逐字出现能力
+                    displayText("text-ubuntu", "click to open", 100); // 100毫秒间隔
+                });
+                // 记录动画是否已经触发的状态
+                let animationTriggered = false;
+            
+            // 点击事件以实现动画效果
+            document.querySelector('.opening-animation').addEventListener('click', function() {
+                // 如果动画已经触发，则直接返回
+                if (animationTriggered) return;
+            
+                // 设置为已触发动画
+                animationTriggered = true;
+            
+                var openingAnimation = document.querySelector('.opening-animation');
+                var footerContent = document.querySelector('.footer__content');
+            
+                // 渐渐消失 "TODAY"
+                openingAnimation.style.opacity = '0';
+            
+                // 显示其他内容
+                footerContent.style.display = 'block'; // 先显示内容
+                footerContent.offsetHeight; // 触发布局 recalculation
+                footerContent.style.opacity = '1'; // 再设置可见性
+            
+                // 逐字出现效果
+                displayText("aboutMeText", "About Me", 100); // 100毫秒间隔
+                displayText("infoText", "Information currently available for disclosure", 50); // 50毫秒间隔
+            });
+
+        function displayText(elementId, text, interval) {
+            const element = document.getElementById(elementId);
+            element.textContent = ""; // 清空文本
+            let index = 0;
+
+            function showNextCharacter() {
+                if (index < text.length) {
+                    element.textContent += text.charAt(index); // 添加下一个字符
+                    index++;
+                    setTimeout(showNextCharacter, interval); // 设置下一次调用
+                }
+            }
+
+            showNextCharacter(); // 开始显示字符
+        }
+    </script>
+</body>
+</body>
+    
+    <script>
+        function toggleDropdown() {
+            var dropdown = document.getElementById("dropdownMenu");
+            if (dropdown.style.display === "none" || dropdown.style.display === "") {
+                dropdown.style.display = "block"; // 显示下拉菜单
+            } else {
+                dropdown.style.display = "none"; // 隐藏下拉菜单
+            }
+        }
+
+        function openMessageWindow() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "block";
+        }
+
+        function closeMessageWindow() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+
+        function submitMessage() {
+            var message = document.getElementById("messageInput").value;
+            if (message) {
+                alert("您的留言是: " + message);
+                document.getElementById("messageInput").value = ""; // 清空输入框
+                closeMessageWindow();
+            } else {
+                alert("请留下您的留言。");
+            }
+        }
+
+        function goToPage(page) {
+            const container = document.querySelector('.container'); // 选择容器
+            container.classList.add('slide-in'); // 添加跳转动画类
+            setTimeout(() => {
+                window.location.href = page; // 动画结束后进行页面跳转
+            }, 500); // 与跳转动画的持续时间相同
+        }
+
+        // 点击其他地方收起下拉菜单
+        window.onclick = function(event) {
+            if (!event.target.matches('.menu-button')) {
+                var dropdown = document.getElementById("dropdownMenu");
+                if (dropdown.style.display === "block") {
+                    dropdown.style.display = "none";
+                }
+
+                // 点击模态窗外关闭模态窗
+                var modal = document.getElementById("myModal");
+                if (modal.style.display === "block") {
+                    if (event.target === modal) {
+                        closeMessageWindow();
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
